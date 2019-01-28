@@ -13,6 +13,8 @@
 
 $app = require __DIR__.'/../bootstrap/app.php';
 
+use Illuminate\Http\Request as Request;
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -25,4 +27,5 @@ $app = require __DIR__.'/../bootstrap/app.php';
 |
 */
 
-$app->run();
+$request = Request::capture();
+$app->run($request);

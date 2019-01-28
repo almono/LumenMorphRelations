@@ -11,6 +11,11 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', ['uses' => 'PageController@View1', 'as' => 'home']);
+
+$router->get('/morph1', ['uses' => 'PageController@View1', 'as' => 'morph1']);
+$router->get('/morph2', ['uses' => 'PageController@View2', 'as' => 'morph2']);
+
+$router->post('/morph1/add_tag', ['uses' => 'PageController@addTag', 'as' => 'add_tag']);
+$router->post('/morph1/assign_photo_tag', ['uses' => 'PageController@assignPhotoTag', 'as' => 'assign_photo_tag']);
+$router->post('/morph1/assign_video_tag', ['uses' => 'PageController@assignVideoTag', 'as' => 'assign_video_tag']);

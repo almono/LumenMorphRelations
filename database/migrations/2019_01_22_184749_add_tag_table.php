@@ -22,7 +22,8 @@ class AddTagTable extends Migration
 
         Schema::create('taggables', function (Blueprint $table) {
             $table->increments("id");
-            $table->morphs('tag');
+            $table->integer("tag_id");
+            $table->morphs('taggable');
 
         });
 
